@@ -489,7 +489,8 @@ unsigned int LoRaE5Class::setFrequencyBand(_physical_type_t physicalType) {
     unsigned int time_cmd = 0;
     cmd[0] = '\0';           // reset the string position
     cmd_resp_ack[0] = '\0';  // reset the string position
-    if (physicalType > UNINIT) {
+    const int physTypeStrCount = (int) (sizeof(physTypeStr) / sizeof(physTypeStr[0]));
+    if (physicalType > UNINIT && physicalType < physTypeStrCount) {
         sprintf(cmd, "AT+DR= %s\r\n", physTypeStr[physicalType]);
         sprintf(cmd_resp_ack, "%s", physTypeStr[physicalType]);
         time_cmd = at_send_check_response(cmd, cmd_resp_ack, 2 * DEFAULT_TIMEWAIT, NULL);
