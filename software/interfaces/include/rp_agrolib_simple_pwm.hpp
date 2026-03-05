@@ -221,6 +221,18 @@ public:
      */
     Align align() const { return align_; }
 
+    
+        /**
+     * @brief Inverts the PWM signal.
+     * 
+     * This method inverts the PWM output, which means that when the duty cycle is high, the output will be low, and vice versa.
+     * 
+     * @param invert Whether to invert the PWM signal (true to invert, false to leave normal).
+     */
+    void set_inverted(bool invert = true) {
+        pwm_set_invert(slice_, invert);  // Inverts the signal for the given slice (channel 0 or 1)
+    }
+
 private:
     /**
      * @brief Clamps the value to the range [0.0, 1.0].
