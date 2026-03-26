@@ -61,7 +61,7 @@ link_directories(${CMAKE_CURRENT_BINARY_DIR}/../../extern/tribe-rp-drivers/softw
 # Find include paths
 include_directories(PROJECT_NAME PUBLIC ${CMAKE_CURRENT_BINARY_DIR}/../../extern/tribe-rp-drivers/software/build/drivers/include/)
 include_directories(PROJECT_NAME PUBLIC ${CMAKE_CURRENT_BINARY_DIR}/../../extern/tribe-rp-drivers/software/build/interfaces/include/)
-include_directories(PROJECT_NAME PUBLIC ${CMAKE_CURRENT_BINARY_DIR}/../../extern/tribe-rp-drivers/software/build/interfaces/third-party/)
+include_directories(PROJECT_NAME PUBLIC ${CMAKE_CURRENT_BINARY_DIR}/../../extern/tribe-rp-drivers/software/build/third_party/include/)
 
 add_executable(PROJECT_EXEC_NAME
                 src/file_name.cpp)
